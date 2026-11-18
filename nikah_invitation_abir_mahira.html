@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikah Mubarak | Abir & Mahira</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Arabic Calligraphy (Aref Ruqaa & Amiri) & Luxury English Serif (Cinzel, Cormorant Garamond, Montserrat) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            deep: '#022419',
+                            royal: '#043927',
+                            rich: '#064e3b',
+                            light: '#0a6c52',
+                        },
+                        gold: {
+                            metallic: '#D4AF37',
+                            bright: '#F3E5AB',
+                            antique: '#AA8220',
+                            shimmer: '#FFF2B2',
+                            dark: '#7A590C'
+                        }
+                    },
+                    fontFamily: {
+                        ruqaa: ['"Aref Ruqaa"', 'serif'],
+                        amiri: ['"Amiri"', 'serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                        cormorant: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 45s linear infinite',
+                        'spin-reverse-slow': 'spinReverse 60s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 7s ease-in-out 2s infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'shimmer': 'shimmer 3s linear infinite',
+                    },
+                    keyframes: {
+                        spinReverse: {
+                            '0%': { transform: 'rotate(360deg)' },
+                            '100%': { transform: 'rotate(0deg)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-16px) rotate(4deg)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(212, 175, 55, 0.25), inset 0 0 10px rgba(212, 175, 55, 0.1)' },
+                            '50%': { boxShadow: '0 0 32px rgba(212, 175, 55, 0.6), inset 0 0 18px rgba(212, 175, 55, 0.25)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% center' },
+                            '100%': { backgroundPosition: '200% center' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Luxury Styles & Islamic Patterns */
+        body {
+            background-color: #022419;
+            color: #F3E5AB;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(10, 108, 82, 0.45) 0%, transparent 60%),
+                radial-gradient(circle at 15% 40%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
+                radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.08) 0%, transparent 45%);
+        }
+
+        /* Subtle Moroccan / Islamic Geometric Background Overlay */
+        .islamic-pattern-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-width='0.6' stroke-opacity='0.12'%3E%3Cpath d='M40 0 L51.7 28.3 L80 40 L51.7 51.7 L40 80 L28.3 51.7 L0 40 L28.3 28.3 Z'/%3E%3Crect x='11.7' y='11.7' width='56.6' height='56.6'/%3E%3Ccircle cx='40' cy='40' r='16'/%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Metallic Gold Foil Text Gradient */
+        .gold-foil-text {
+            background: linear-gradient(
+                135deg,
+                #BF953F 0%,
+                #FCF6BA 25%,
+                #D4AF37 50%,
+                #FBF5B7 75%,
+                #AA771C 100%
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 6s linear infinite;
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+        }
+
+        /* Gold Foil Border & Card Glass */
+        .royal-card {
+            background: linear-gradient(145deg, rgba(4, 57, 39, 0.85), rgba(2, 36, 25, 0.95));
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 25px rgba(212, 175, 55, 0.08);
+            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .royal-card:hover {
+            border-color: rgba(243, 229, 171, 0.85);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Islamic Arch Shape */
+        .islamic-arch {
+            border-radius: 180px 180px 20px 20px;
+        }
+
+        /* Scroll Reveal Utility Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px) scale(0.98);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+        .reveal-delay-3 { transition-delay: 0.45s; }
+
+        /* Envelope / Curtain Entrance Overlay */
+        #entrance-curtain {
+            transition: opacity 1.1s ease-in-out, transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        #entrance-curtain.opened {
+            opacity: 0;
+            pointer-events: none;
+            transform: scale(1.06);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #022419;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #AA8220, #D4AF37);
+            border-radius: 9999px;
+        }
+
+        /* Gold Shimmer Button */
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #F3E5AB 50%, #AA8220 100%);
+            background-size: 200% auto;
+            color: #022419;
+            transition: all 0.4s ease;
+        }
+        .btn-gold:hover {
+            background-position: right center;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.65);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="islamic-pattern-bg antialiased selection:bg-gold-metallic selection:text-emerald-deep">
+
+    <!-- Floating Gold Particles & Ornaments Canvas -->
+    <canvas id="gold-particles" class="fixed inset-0 pointer-events-none z-10"></canvas>
+
+    <!-- Royal Entrance Curtain Overlay -->
+    <div id="entrance-curtain" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-emerald-deep islamic-pattern-bg px-6 text-center">
+        <!-- Decorative Corner Frames -->
+        <div class="fixed inset-4 sm:inset-8 border border-gold-metallic/40 rounded-2xl pointer-events-none"></div>
+        <div class="fixed inset-6 sm:inset-10 border border-gold-metallic/20 rounded-xl pointer-events-none"></div>
+
+        <div class="relative max-w-md w-full p-8 sm:p-10 rounded-3xl royal-card animate-pulse-glow">
+            <!-- Rotating Rub el Hizb SVG Seal -->
+            <div class="w-24 h-24 mx-auto mb-6 relative flex items-center justify-center">
+                <svg class="w-full h-full text-gold-metallic animate-spin-slow" viewBox="0 0 100 100" fill="none">
+                    <rect x="20" y="20" width="60" height="60" stroke="currentColor" stroke-width="1.5"/>
+                    <rect x="20" y="20" width="60" height="60" transform="rotate(45 50 50)" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="50" cy="50" r="22" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>
+                </svg>
+                <span class="absolute font-amiri text-2xl text-gold-bright font-bold">نكاح</span>
+            </div>
+
+            <p class="font-amiri text-2xl sm:text-3xl text-gold-bright mb-2" dir="rtl">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ</p>
+            <p class="font-cinzel text-xs tracking-[0.3em] uppercase text-gold-metallic/90 mb-6">Royal Nikah Invitation</p>
+            
+            <h2 class="font-cormorant italic text-3xl sm:text-4xl text-white mb-2">Abir & Mahira</h2>
+            <p class="font-sans text-xs tracking-widest uppercase text-gold-bright/75 mb-8">20 November 2026 • Dhaka</p>
+
+            <button id="open-invitation-btn" class="btn-gold w-full py-3.5 px-6 rounded-full font-cinzel font-bold text-sm tracking-widest uppercase shadow-lg flex items-center justify-center gap-3 cursor-pointer">
+                <span>Open Invitation</span>
+                <i class="fa-solid fa-envelope-open-text"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Ambient Chime / Sound Toggle (Synthesized Web Audio API - Zero External URLs) -->
+    <button id="audio-toggle" aria-label="Toggle Ambient Chime" title="Toggle Soft Harmonic Chime" class="fixed bottom-5 right-5 z-40 w-12 h-12 rounded-full royal-card flex items-center justify-center text-gold-metallic hover:text-gold-bright transition-all cursor-pointer shadow-xl">
+        <i id="audio-icon" class="fa-solid fa-volume-xmark text-lg"></i>
+    </button>
+
+    <!-- Toast Notification Banner -->
+    <div id="toast-notification" class="fixed top-6 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 -translate-y-6 transition-all duration-500">
+        <div class="bg-emerald-deep/95 border border-gold-metallic text-gold-bright px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 backdrop-blur-md">
+            <i class="fa-solid fa-circle-check text-gold-metallic text-lg"></i>
+            <span id="toast-message" class="font-sans text-xs sm:text-sm font-medium tracking-wide">Invitation details copied to clipboard!</span>
+        </div>
+    </div>
+
+    <!-- Outer Luxury Gold Border Frame -->
+    <div class="relative min-h-screen border-[6px] sm:border-[12px] border-double border-gold-metallic/30">
+        
+        <!-- Decorative Corner Islamic Mandalas -->
+        <svg class="fixed top-0 left-0 w-32 h-32 sm:w-48 sm:h-48 text-gold-metallic/25 pointer-events-none z-0 -translate-x-8 -translate-y-8 animate-spin-slow" viewBox="0 0 200 200" fill="none">
+            <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"/>
+            <polygon points="100,10 125,75 190,100 125,125 100,190 75,125 10,100 75,75" stroke="currentColor" stroke-width="1"/>
+            <polygon points="100,25 140,60 175,100 140,140 100,175 60,140 25,100 60,60" stroke="currentColor" stroke-width="1"/>
+        </svg>
+        <svg class="fixed top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 text-gold-metallic/25 pointer-events-none z-0 translate-x-8 -translate-y-8 animate-spin-reverse-slow" viewBox="0 0 200 200" fill="none">
+            <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4"/>
+            <polygon points="100,10 125,75 190,100 125,125 100,190 75,125 10,100 75,75" stroke="currentColor" stroke-width="1"/>
+            <polygon points="100,25 140,60 175,100 140,140 100,175 60,140 25,100 60,60" stroke="currentColor" stroke-width="1"/>
+        </svg>
+
+        <!-- MAIN CONTAINER -->
+        <main class="relative z-20 max-w-5xl mx-auto px-4 sm:px-8 py-12 sm:py-20 space-y-20 sm:space-y-28">
+
+            <!-- ================= HERO & BISMILLAH SECTION ================= -->
+            <header class="text-center space-y-8 pt-4">
+                <!-- Floating Crescent & Lantern Ornaments -->
+                <div class="flex justify-center items-center gap-6 text-gold-metallic/80">
+                    <i class="fa-solid fa-star-and-crescent text-xl sm:text-2xl animate-float"></i>
+                    <div class="h-[1px] w-16 sm:w-28 bg-gradient-to-r from-transparent via-gold-metallic to-transparent"></div>
+                    <!-- Islamic 8-Point Star SVG -->
+                    <svg class="w-8 h-8 text-gold-bright animate-spin-slow" viewBox="0 0 64 64" fill="currentColor">
+                        <path d="M32 0L39.5 16.5L56 9L48.5 25.5L64 32L48.5 39.5L56 56L39.5 48.5L32 64L25.5 48.5L9 56L16.5 39.5L0 32L16.5 25.5L9 9L25.5 16.5L32 0Z"/>
+                    </svg>
+                    <div class="h-[1px] w-16 sm:w-28 bg-gradient-to-r from-transparent via-gold-metallic to-transparent"></div>
+                    <i class="fa-solid fa-mosque text-xl sm:text-2xl animate-float-delayed"></i>
+                </div>
+
+                <!-- BISMILLAH CALLIGRAPHY -->
+                <div class="py-4 px-4 sm:px-8 rounded-3xl inline-block relative">
+                    <h1 dir="rtl" lang="ar" class="font-ruqaa text-3xl sm:text-5xl md:text-6xl gold-foil-text leading-relaxed py-2">
+                        بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                    </h1>
+                    <p class="font-cormorant italic text-base sm:text-lg text-gold-bright/85 tracking-wide mt-2">
+                        In the name of Allah, the Most Gracious, the Most Merciful
+                    </p>
+                </div>
+
+                <!-- Arabic Greeting & Quranic Verse -->
+                <div class="max-w-2xl mx-auto space-y-4 royal-card p-6 sm:p-10 rounded-3xl">
+                    <p dir="rtl" lang="ar" class="font-amiri text-2xl sm:text-3xl text-gold-bright leading-loose">
+                        السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ
+                    </p>
+                    <p class="font-cinzel text-xs sm:text-sm tracking-[0.25em] uppercase text-gold-metallic">
+                        Assalamu Alaikum Wa Rahmatullahi Wa Barakatuh
+                    </p>
+                    
+                    <div class="my-4 flex items-center justify-center gap-3">
+                        <span class="h-[1px] w-12 bg-gold-metallic/40"></span>
+                        <span class="text-gold-metallic text-xs">✦</span>
+                        <span class="h-[1px] w-12 bg-gold-metallic/40"></span>
+                    </div>
+
+                    <p dir="rtl" lang="ar" class="font-amiri text-xl sm:text-2xl text-gold-shimmer leading-relaxed">
+                        "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"
+                    </p>
+                    <p class="font-cormorant italic text-lg sm:text-xl text-white/90 leading-relaxed">
+                        “And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy.”
+                    </p>
+                    <p class="font-sans text-xs tracking-widest uppercase text-gold-metallic font-semibold">
+                        — Surah Ar-Rum (30:21)
+                    </p>
+                </div>
+
+                <!-- Formal Invitation Intro -->
+                <div class="space-y-3 pt-4">
+                    <p class="font-cinzel text-sm sm:text-base tracking-[0.25em] uppercase text-gold-metallic">
+                        Together with their beloved families
+                    </p>
+                    <p class="font-cormorant text-xl sm:text-2xl text-gold-bright/90 max-w-xl mx-auto">
+                        We cordially request the honor of your presence and prayers at the sacred Nikah ceremony of
+                    </p>
+                </div>
+            </header>
+
+            <!-- ================= COUPLE SECTION ================= -->
+            <section id="couple" class="reveal space-y-10">
+                <div class="text-center space-y-2">
+                    <p dir="rtl" lang="ar" class="font-amiri text-2xl sm:text-3xl text-gold-metallic">العريس والعروس</p>
+                    <h2 class="font-cinzel text-2xl sm:text-4xl font-bold tracking-wider gold-foil-text uppercase">
+                        The Groom & The Bride
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-11 gap-8 items-center">
+                    
+                    <!-- GROOM CARD -->
+                    <div class="md:col-span-5 royal-card islamic-arch p-8 sm:p-10 text-center relative group overflow-hidden">
+                        <!-- Subtle Hover Shimmer Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-gold-metallic/0 via-gold-bright/10 to-gold-metallic/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                        
+                        <!-- Decorative Top Arch Emblem -->
+                        <div class="w-20 h-20 mx-auto mb-6 rounded-full border-2 border-gold-metallic/60 flex items-center justify-center bg-emerald-deep/80 shadow-inner group-hover:scale-110 group-hover:border-gold-bright transition-all duration-500">
+                            <span class="font-amiri text-2xl text-gold-bright">العريس</span>
+                        </div>
+
+                        <span class="inline-block px-4 py-1 rounded-full bg-gold-metallic/15 border border-gold-metallic/30 font-cinzel text-xs tracking-[0.2em] uppercase text-gold-bright mb-4">
+                            The Groom
+                        </span>
+
+                        <h3 class="font-cormorant font-bold text-3xl sm:text-4xl text-white group-hover:text-gold-shimmer transition-colors duration-300">
+                            Fazla Rabbi Abir
+                        </h3>
+                        <p dir="rtl" lang="ar" class="font-amiri text-2xl text-gold-metallic mt-1 mb-5">
+                            فضل ربي عبير
+                        </p>
+
+                        <div class="w-16 h-[1px] bg-gold-metallic/50 mx-auto my-4 group-hover:w-28 transition-all duration-500"></div>
+
+                        <p class="font-sans text-xs uppercase tracking-widest text-gold-bright/70 mb-1">
+                            Beloved Son of
+                        </p>
+                        <p class="font-cormorant text-2xl font-semibold text-gold-bright">
+                            Mr. Kamal Uddin
+                        </p>
+                        <p dir="rtl" lang="ar" class="font-amiri text-lg text-gold-metallic/80 mt-0.5">
+                            ابن السيد كمال الدين
+                        </p>
+                    </div>
+
+                    <!-- CENTER ARABIC MONOGRAM / WEDDING CREST -->
+                    <div class="md:col-span-1 flex flex-col items-center justify-center py-2">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full royal-card flex flex-col items-center justify-center border-2 border-gold-metallic animate-pulse-glow relative">
+                            <span class="font-amiri text-xl text-gold-metallic leading-none">و</span>
+                            <span class="font-cormorant italic text-3xl font-bold gold-foil-text">&amp;</span>
+                        </div>
+                    </div>
+
+                    <!-- BRIDE CARD -->
+                    <div class="md:col-span-5 royal-card islamic-arch p-8 sm:p-10 text-center relative group overflow-hidden">
+                        <!-- Subtle Hover Shimmer Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-gold-metallic/0 via-gold-bright/10 to-gold-metallic/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                        
+                        <!-- Decorative Top Arch Emblem -->
+                        <div class="w-20 h-20 mx-auto mb-6 rounded-full border-2 border-gold-metallic/60 flex items-center justify-center bg-emerald-deep/80 shadow-inner group-hover:scale-110 group-hover:border-gold-bright transition-all duration-500">
+                            <span class="font-amiri text-2xl text-gold-bright">العروس</span>
+                        </div>
+
+                        <span class="inline-block px-4 py-1 rounded-full bg-gold-metallic/15 border border-gold-metallic/30 font-cinzel text-xs tracking-[0.2em] uppercase text-gold-bright mb-4">
+                            The Bride
+                        </span>
+
+                        <h3 class="font-cormorant font-bold text-3xl sm:text-4xl text-white group-hover:text-gold-shimmer transition-colors duration-300">
+                            Mahjabin Faria Mahira
+                        </h3>
+                        <p dir="rtl" lang="ar" class="font-amiri text-2xl text-gold-metallic mt-1 mb-5">
+                            مهجبين فاريا ماهرة
+                        </p>
+
+                        <div class="w-16 h-[1px] bg-gold-metallic/50 mx-auto my-4 group-hover:w-28 transition-all duration-500"></div>
+
+                        <p class="font-sans text-xs uppercase tracking-widest text-gold-bright/70 mb-1">
+                            Beloved Daughter of
+                        </p>
+                        <p class="font-cormorant text-2xl font-semibold text-gold-bright">
+                            Mr. Salah Uddin
+                        </p>
+                        <p dir="rtl" lang="ar" class="font-amiri text-lg text-gold-metallic/80 mt-0.5">
+                            بنت السيد صلاح الدين
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ================= LIVE COUNTDOWN SECTION ================= -->
+            <section id="countdown-section" class="reveal">
+                <div class="royal-card rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden">
+                    <!-- Subtle Islamic Star Watermark -->
+                    <div class="absolute -right-12 -bottom-12 opacity-10 pointer-events-none">
+                        <svg class="w-56 h-56 text-gold-metallic animate-spin-slow" viewBox="0 0 100 100" fill="currentColor">
+                            <polygon points="50,0 63,37 100,50 63,63 50,100 37,63 0,50 37,37"/>
+                        </svg>
+                    </div>
+
+                    <p dir="rtl" lang="ar" class="font-amiri text-2xl sm:text-3xl text-gold-metallic mb-1">العد التنازلي ليوم النكاح</p>
+                    <h2 class="font-cinzel text-xl sm:text-3xl font-bold tracking-widest gold-foil-text uppercase mb-2">
+                        Counting Down To The Blessed Union
+                    </h2>
+                    <p class="font-cormorant italic text-lg text-gold-bright/80 mb-8">
+                        Insha'Allah • Friday, 20 November 2026
+                    </p>
+
+                    <!-- Countdown Grid -->
+                    <div id="countdown-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 max-w-3xl mx-auto">
+                        <!-- Days -->
+                        <div class="bg-emerald-deep/90 border border-gold-metallic/40 rounded-2xl p-5 sm:p-6 shadow-lg transform hover:scale-105 transition-transform">
+                            <span id="days" class="block font-cinzel text-3xl sm:text-5xl font-bold gold-foil-text">00</span>
+                            <span class="block font-sans text-xs uppercase tracking-[0.2em] text-gold-bright/80 mt-2">Days</span>
+                            <span dir="rtl" class="block font-amiri text-sm text-gold-metallic mt-0.5">أيام</span>
+                        </div>
+                        <!-- Hours -->
+                        <div class="bg-emerald-deep/90 border border-gold-metallic/40 rounded-2xl p-5 sm:p-6 shadow-lg transform hover:scale-105 transition-transform">
+                            <span id="hours" class="block font-cinzel text-3xl sm:text-5xl font-bold gold-foil-text">00</span>
+                            <span class="block font-sans text-xs uppercase tracking-[0.2em] text-gold-bright/80 mt-2">Hours</span>
+                            <span dir="rtl" class="block font-amiri text-sm text-gold-metallic mt-0.5">ساعات</span>
+                        </div>
+                        <!-- Minutes -->
+                        <div class="bg-emerald-deep/90 border border-gold-metallic/40 rounded-2xl p-5 sm:p-6 shadow-lg transform hover:scale-105 transition-transform">
+                            <span id="minutes" class="block font-cinzel text-3xl sm:text-5xl font-bold gold-foil-text">00</span>
+                            <span class="block font-sans text-xs uppercase tracking-[0.2em] text-gold-bright/80 mt-2">Minutes</span>
+                            <span dir="rtl" class="block font-amiri text-sm text-gold-metallic mt-0.5">دقائق</span>
+                        </div>
+                        <!-- Seconds -->
+                        <div class="bg-emerald-deep/90 border border-gold-metallic/40 rounded-2xl p-5 sm:p-6 shadow-lg transform hover:scale-105 transition-transform">
+                            <span id="seconds" class="block font-cinzel text-3xl sm:text-5xl font-bold gold-foil-text">00</span>
+                            <span class="block font-sans text-xs uppercase tracking-[0.2em] text-gold-bright/80 mt-2">Seconds</span>
+                            <span dir="rtl" class="block font-amiri text-sm text-gold-metallic mt-0.5">ثواني</span>
+                        </div>
+                    </div>
+
+                    <!-- Event Completed Message (Hidden until date arrives) -->
+                    <div id="nikah-live-banner" class="hidden mt-6 p-4 rounded-2xl bg-gold-metallic/20 border border-gold-metallic text-gold-bright font-cormorant text-2xl">
+                        ✨ Alhamdulillah! Today is the Blessed Day of Nikah! Barakallahu Lakuma! ✨
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= EVENT DETAILS & VENUE SECTION ================= -->
+            <section id="details" class="reveal space-y-10">
+                <div class="text-center space-y-2">
+                    <p dir="rtl" lang="ar" class="font-amiri text-2xl sm:text-3xl text-gold-metallic">تفاصيل حفل النكاح</p>
+                    <h2 class="font-cinzel text-2xl sm:text-4xl font-bold tracking-wider gold-foil-text uppercase">
+                        Nikah Ceremony & Venue
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Date & Time Card -->
+                    <div class="royal-card rounded-3xl p-8 sm:p-10 text-center flex flex-col justify-between space-y-6">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-gold-metallic/15 border border-gold-metallic/40 flex items-center justify-center text-gold-metallic text-2xl">
+                            <i class="fa-regular fa-calendar-check"></i>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <p class="font-cinzel text-xs tracking-[0.25em] uppercase text-gold-metallic">Date & Sacred Timing</p>
+                            <h3 class="font-cormorant text-3xl sm:text-4xl font-bold text-white">
+                                Friday, 20 November 2026
+                            </h3>
+                            <p dir="rtl" lang="ar" class="font-amiri text-xl text-gold-bright">
+                                الجمعة، ٢٠ نوفمبر ٢٠٢٦ م
+                            </p>
+                        </div>
+
+                        <div class="py-4 px-5 rounded-2xl bg-emerald-deep/80 border border-gold-metallic/30 space-y-1">
+                            <p class="font-cinzel text-lg sm:text-xl font-bold text-gold-shimmer">
+                                Bad Asr (After Asr Prayer)
+                            </p>
+                            <p dir="rtl" lang="ar" class="font-amiri text-xl text-gold-metallic">
+                                بعد صلاة العصر مباشرةً
+                            </p>
+                            <p class="font-sans text-xs text-gold-bright/75 tracking-wider pt-1">
+                                Approximately 4:30 PM (Dhaka Time)
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="royal-card rounded-3xl p-8 sm:p-10 text-center flex flex-col justify-between space-y-6">
+                        <div class="w-16 h-16 mx-auto rounded-2xl bg-gold-metallic/15 border border-gold-metallic/40 flex items-center justify-center text-gold-metallic text-2xl">
+                            <i class="fa-solid fa-mosque"></i>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <p class="font-cinzel text-xs tracking-[0.25em] uppercase text-gold-metallic">Sacred Venue</p>
+                            <h3 class="font-cormorant text-3xl sm:text-4xl font-bold text-white">
+                                C Block Mosque
+                            </h3>
+                            <p class="font-cormorant text-xl sm:text-2xl text-gold-bright">
+                                Bashundhara R/A, Dhaka, Bangladesh
+                            </p>
+                            <p dir="rtl" lang="ar" class="font-amiri text-xl text-gold-metallic pt-1">
+                                مسجد بلوك سي، بندهارا، دكا
+                            </p>
+                        </div>
+
+                        <!-- Interactive Action Buttons -->
+                        <div class="pt-2 flex flex-col sm:flex-row gap-3 justify-center">
+                            <a href="https://www.google.com/maps/search/?api=1&query=C+Block+Mosque+Bashundhara+Dhaka" target="_blank" rel="noopener noreferrer" class="btn-gold flex-1 py-3 px-5 rounded-xl font-cinzel font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow-md">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>Open Google Maps</span>
+                            </a>
+                            <button id="copy-details-btn" class="flex-1 py-3 px-5 rounded-xl border border-gold-metallic/70 bg-emerald-deep/80 hover:bg-gold-metallic/20 text-gold-bright font-cinzel font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-all cursor-pointer">
+                                <i class="fa-regular fa-copy"></i>
+                                <span>Copy Invitation</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Embedded Map Preview -->
+                <div class="royal-card rounded-3xl p-3 sm:p-4 overflow-hidden">
+                    <div class="relative w-full h-64 sm:h-80 rounded-2xl overflow-hidden border border-gold-metallic/30">
+                        <iframe 
+                            title="C Block Mosque, Bashundhara, Dhaka Map"
+                            class="w-full h-full filter contrast-105 opacity-90 hover:opacity-100 transition-opacity"
+                            src="https://maps.google.com/maps?q=C%20Block%20Mosque%2C%20Bashundhara%20Residential%20Area%2C%20Dhaka&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ================= PROPHETIC BLESSING (DUA) SECTION ================= -->
+            <section class="reveal">
+                <div class="royal-card rounded-3xl p-8 sm:p-12 text-center max-w-3xl mx-auto border-2 border-gold-metallic/40 relative">
+                    <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gold-metallic/15 text-gold-metallic mb-4">
+                        <i class="fa-solid fa-hands-praying text-xl"></i>
+                    </div>
+                    
+                    <p class="font-cinzel text-xs tracking-[0.25em] uppercase text-gold-metallic mb-4">
+                        Sunnah Wedding Supplication • دعاء الزواج
+                    </p>
+
+                    <p dir="rtl" lang="ar" class="font-amiri text-2xl sm:text-4xl text-gold-shimmer leading-loose mb-4">
+                        بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+                    </p>
+
+                    <p class="font-cormorant italic text-xl sm:text-2xl text-white/95 leading-relaxed mb-3">
+                        “May Allah bless you both, shower His blessings upon you, and unite you together in goodness.”
+                    </p>
+
+                    <p class="font-sans text-xs tracking-widest uppercase text-gold-metallic/85">
+                        Barakallahu Lakuma Wa Baraka Alaikuma Wa Jama'a Bainakuma Fi Khair
+                    </p>
+                </div>
+            </section>
+
+            <!-- ================= FOOTER ================= -->
+            <footer class="reveal text-center pt-6 pb-8 space-y-5 border-t border-gold-metallic/25">
+                <p dir="rtl" lang="ar" class="font-ruqaa text-2xl sm:text-3xl gold-foil-text">
+                    نِكَاحٌ مُبَارَكٌ • جَزَاكُمُ اللَّهُ خَيْرًا
+                </p>
+                <p class="font-cormorant text-xl text-gold-bright">
+                    Your presence & sincere Duas are the greatest gifts we could ask for.
+                </p>
+                <p class="font-cinzel text-xs tracking-[0.2em] uppercase text-gold-metallic/80">
+                    With Warm Regards from the Families of Mr. Kamal Uddin & Mr. Salah Uddin
+                </p>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- ================= JAVASCRIPT INTERACTIVITY & ANIMATIONS ================= -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. ROYAL ENTRANCE CURTAIN REVEAL
+            const entranceCurtain = document.getElementById('entrance-curtain');
+            const openBtn = document.getElementById('open-invitation-btn');
+
+            function openInvitation() {
+                entranceCurtain.classList.add('opened');
+                playSoftChime(); // Optional gentle welcome chime
+                setTimeout(() => {
+                    entranceCurtain.style.display = 'none';
+                }, 1200);
+            }
+
+            openBtn.addEventListener('click', openInvitation);
+
+            // 2. FLOATING GOLD PARTICLES & CRESCENTS CANVAS
+            const canvas = document.getElementById('gold-particles');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            class GoldParticle {
+                constructor() {
+                    this.reset();
+                }
+                reset() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2.5 + 0.8;
+                    this.speedY = -(Math.random() * 0.45 + 0.15);
+                    this.speedX = (Math.random() - 0.5) * 0.3;
+                    this.opacity = Math.random() * 0.6 + 0.2;
+                    this.isDiamond = Math.random() > 0.75;
+                }
+                update() {
+                    this.y += this.speedY;
+                    this.x += this.speedX;
+                    if (this.y < -10) {
+                        this.y = canvas.height + 10;
+                        this.x = Math.random() * canvas.width;
+                    }
+                }
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = this.opacity;
+                    ctx.fillStyle = '#F3E5AB';
+                    ctx.shadowColor = '#D4AF37';
+                    ctx.shadowBlur = 8;
+
+                    if (this.isDiamond) {
+                        // Draw tiny 4-point Islamic sparkle
+                        ctx.translate(this.x, this.y);
+                        ctx.beginPath();
+                        const s = this.size * 1.8;
+                        ctx.moveTo(0, -s);
+                        ctx.lineTo(s * 0.35, -s * 0.35);
+                        ctx.lineTo(s, 0);
+                        ctx.lineTo(s * 0.35, s * 0.35);
+                        ctx.lineTo(0, s);
+                        ctx.lineTo(-s * 0.35, s * 0.35);
+                        ctx.lineTo(-s, 0);
+                        ctx.lineTo(-s * 0.35, -s * 0.35);
+                        ctx.closePath();
+                        ctx.fill();
+                    } else {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                    ctx.restore();
+                }
+            }
+
+            const particleCount = Math.min(55, Math.floor(window.innerWidth / 22));
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new GoldParticle());
+            }
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.update();
+                    p.draw();
+                });
+                requestAnimationFrame(animateParticles);
+            }
+            animateParticles();
+
+            // 3. LIVE COUNTDOWN TIMER TO NOVEMBER 20, 2026, 4:30 PM (BDT +06:00)
+            const weddingDate = new Date('2026-11-20T16:30:00+06:00').getTime();
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            const secondsEl = document.getElementById('seconds');
+            const liveBanner = document.getElementById('nikah-live-banner');
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = weddingDate - now;
+
+                if (distance <= 0) {
+                    daysEl.textContent = '00';
+                    hoursEl.textContent = '00';
+                    minutesEl.textContent = '00';
+                    secondsEl.textContent = '00';
+                    liveBanner.classList.remove('hidden');
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                daysEl.textContent = String(days).padStart(2, '0');
+                hoursEl.textContent = String(hours).padStart(2, '0');
+                minutesEl.textContent = String(minutes).padStart(2, '0');
+                secondsEl.textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // 4. SCROLL REVEAL ANIMATION (INTERSECTION OBSERVER)
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+            // 5. COPY INVITATION DETAILS TO CLIPBOARD (WITH FALLBACK)
+            const copyBtn = document.getElementById('copy-details-btn');
+            const toast = document.getElementById('toast-notification');
+            const toastMsg = document.getElementById('toast-message');
+
+            function showToast(message) {
+                toastMsg.textContent = message;
+                toast.classList.remove('opacity-0', '-translate-y-6');
+                toast.classList.add('opacity-100', 'translate-y-0');
+                setTimeout(() => {
+                    toast.classList.remove('opacity-100', 'translate-y-0');
+                    toast.classList.add('opacity-0', '-translate-y-6');
+                }, 3200);
+            }
+
+            const invitationText = `بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+As-salamu Alaikum Wa Rahmatullahi Wa Barakatuh
+
+You are cordially invited to the blessed Nikah ceremony of:
+💍 Fazla Rabbi Abir (Son of Mr. Kamal Uddin)
+&
+💍 Mahjabin Faria Mahira (Daughter of Mr. Salah Uddin)
+
+📅 Date: Friday, 20 November 2026
+🕌 Time: Bad Asr (After Asr Prayer, approx. 4:30 PM)
+📍 Venue: C Block Mosque, Bashundhara R/A, Dhaka
+🗺️ Google Maps: https://www.google.com/maps/search/?api=1&query=C+Block+Mosque+Bashundhara+Dhaka
+
+بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+Please keep the couple in your sincere Duas.`;
+
+            copyBtn.addEventListener('click', () => {
+                // Use reliable execCommand fallback for iframe compatibility
+                const textArea = document.createElement('textarea');
+                textArea.value = invitationText;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-9999px';
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast('Nikah invitation details copied to clipboard!');
+                } catch (err) {
+                    showToast('Unable to copy automatically. Please copy manually.');
+                }
+                document.body.removeChild(textArea);
+            });
+
+            // 6. OPTIONAL GENTLE SYNTHESIZED HARMONIC CHIME (WEB AUDIO API)
+            let audioCtx = null;
+            let isAudioEnabled = false;
+            const audioToggleBtn = document.getElementById('audio-toggle');
+            const audioIcon = document.getElementById('audio-icon');
+
+            function playSoftChime() {
+                if (!isAudioEnabled) return;
+                try {
+                    if (!audioCtx) {
+                        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    }
+                    if (audioCtx.state === 'suspended') {
+                        audioCtx.resume();
+                    }
+                    // Peaceful Hijaz / Oriental harmonic chord notes (D4, Eb4, F#4, A4)
+                    const freqs = [293.66, 311.13, 369.99, 440.00];
+                    freqs.forEach((freq, idx) => {
+                        const osc = audioCtx.createOscillator();
+                        const gain = audioCtx.createGain();
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(freq, audioCtx.currentTime + idx * 0.18);
+                        
+                        gain.gain.setValueAtTime(0.001, audioCtx.currentTime + idx * 0.18);
+                        gain.gain.exponentialRampToValueAtTime(0.04, audioCtx.currentTime + idx * 0.18 + 0.15);
+                        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + idx * 0.18 + 2.2);
+
+                        osc.connect(gain);
+                        gain.connect(audioCtx.destination);
+
+                        osc.start(audioCtx.currentTime + idx * 0.18);
+                        osc.stop(audioCtx.currentTime + idx * 0.18 + 2.3);
+                    });
+                } catch (e) {
+                    // Fail silently if browser blocks audio
+                }
+            }
+
+            audioToggleBtn.addEventListener('click', () => {
+                isAudioEnabled = !isAudioEnabled;
+                if (isAudioEnabled) {
+                    audioIcon.className = 'fa-solid fa-volume-high text-lg text-gold-bright';
+                    playSoftChime();
+                    showToast('Harmonic chime enabled');
+                } else {
+                    audioIcon.className = 'fa-solid fa-volume-xmark text-lg text-gold-metallic';
+                    showToast('Chime muted');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
